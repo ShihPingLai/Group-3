@@ -1,7 +1,7 @@
 # Group-3   
 
 # Topic       
-混沌的保密通訊
+混沌同步保密通訊
 
 # Group member      
 104022192  楊馥榕    
