@@ -1,9 +1,9 @@
-Group-3
+Group-3   
 
-Topic: 
+Topic:    
 混沌的保密通訊
 
-Group member: 
+Group member:    
 104022192 楊馥榕, 104022207 饒孝節, 104022209 李岱庭, 104022271 林希雲, 105022220 許祐綸
 
 Method:   
