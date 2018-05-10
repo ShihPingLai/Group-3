@@ -1,0 +1,3 @@
+#this is the running script for our final project
+python produce_sig.py
+python Analysis_signal.py
