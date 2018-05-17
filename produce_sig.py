@@ -9,6 +9,10 @@ c1 = 1.0
 c2 = 28.0
 m0 = -1.143
 m1 = -0.714
+#open the data from our sound 
+f1= open("sound1.txt","r")
+f2= open("sound2.txt","r")
+f3= open("time.txt","r")
 
 #just a little extra, quite unimportant
 def f(x):
@@ -23,8 +27,15 @@ def dH_dt(H, t=0):
 
 
 
+
 #computational time steps
-t = np.linspace(0, 30, 1000)
+t=[]
+sound1=[]
+sound2=[]
+for i in range (720832):
+	t.append(float(f3.readline()))
+	sound1.append(float(f1.readline()))
+	sound2.append(float(f2.readline()))
 #x, y, and z initial conditions
 H0 = [0.7, 0.0, 0.0]
 
@@ -32,28 +43,49 @@ H, infodict = integrate.odeint(dH_dt, H0, t, full_output=True)
 
 print(infodict['message'])
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot(H[:,0], H[:,1], H[:,2])
+#plt.subplot(221)
+fig1=plt.figure(1)
+ax = fig1.add_subplot(111, projection='3d')
+ax.plot(H[:,0]*5000, H[:,1]*5000, H[:,2]*5000)
 plt.show()
 
+#plt.subplot(222)
+"""
+fig2=plt.figure(2)
 x = np.sin(t)
 plt.plot(t, x)
 plt.show()
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot(H[:,0]+x, H[:,1], H[:,2])
+"""
+
+
+
+#plt.subplot(223)
+fig3 = plt.figure(3)
+ax = fig3.add_subplot(111, projection='3d')
+ax.plot(H[:,0]*5000+sound1, H[:,1]*5000+sound2, H[:,2]*5000)
 plt.show()
 
-out=H[:,0]+x
+out1=H[:,0]*5000+sound1
+out2=H[:,1]*5000+sound2
 #print (out)
 
+fig4=plt.figure(4)
+plt.plot(t,out1)
+plt.show()
+fig5=plt.figure(5)
+plt.plot(t,sound2)
+plt.show()
 
 
-f= open("in.txt","w")
-for i in range(1000):
-    #f.write(str(H[i,0])+" "+str(H[i,1])+" "+str(H[i,2])+" "+"\n")
-    #f.write(str(H[i,0]))
-    f.write(str(out[i])+"\n")
-f.close()
+f4= open("in1.txt","w")
+f5= open("in2.txt","w")
+for i in range(720832):
+    f4.write(str(out1[i])+"\n")
+    f5.write(str(out2[i])+"\n")
+
+f4.close()
+f5.close()
+f1.close()
+f2.close()
+f3.close()
 
