@@ -3,6 +3,9 @@ import scipy.integrate as integrate
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+
+print ("Start analysis signal ...")
+print ("Open sound + chaos files ...")
 o1 = open("in1.txt","r")
 o2 = open("in2.txt","r")
 ot = open("time.txt","r")
@@ -23,6 +26,7 @@ plt.show()
 """
 #Copy the chaos, reproduce signal
 #define universal variables
+print ("Now reproduce chaos ...")
 c0 = 15.6
 c1 = 1.0
 c2 = 28.0
@@ -46,13 +50,15 @@ H, infodict = integrate.odeint(dH_dt, H0, t, full_output=True)
 
 
 #SigMix-H
+print ("Subtract chaos and out put sound ...")
+out1=SigMix1-H[:,0]
+out2=SigMix2-H[:,1]
 
-out1=SigMix1-H[:,0]*5000
-out2=SigMix2-H[:,1]*5000
+print ("Sound 1")
 fig1=plt.figure(1)
 plt.plot(t,out1)
 plt.show()
-
+print ("Sound 2")
 fig2=plt.figure(2)
 plt.plot(t,out2)
 plt.show()
