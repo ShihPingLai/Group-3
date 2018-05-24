@@ -33,10 +33,12 @@ def wav_show(wave_data, fs): # 显示出来声音波形
     # 画声音波形
     plt.plot(time, wave_data)  
     plt.show()
-
+print ("Please input the file name of your wav fille 0w0 \n**(No need to type .wav)**")
+a = input("File name:")
+b = a+".wav"
 print ("Saving sound into files ...")  
 if(__name__=='__main__'):
-	wave_data, fs = read_wav_data("Recording-3.wav")  
+	wave_data, fs = read_wav_data(b)  
 	wav_show(wave_data[0],fs)
 	wav_show(wave_data[1],fs)  # 如果是双声道则保留这一行，否则删掉这一行
 	time = np.arange(0, len(wave_data[0])) * (1.0/fs)
