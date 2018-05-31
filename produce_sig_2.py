@@ -34,7 +34,7 @@ def wav_show(wave_data, fs): # 显示出来声音波形
     time = np.arange(0, len(wave_data)) * (1.0/fs)  # 计算声音的播放时间，单位为秒
     # 画声音波形
     plt.plot(time, wave_data)
-    plt.title(title)
+    plt.title("title")
     plt.show()
 print ("Please input the file name of your wav fille 0w0 \n**(No need to type .wav)**")
 a = input("File name:")
@@ -42,8 +42,8 @@ b = a+".wav"
 print ("Saving sound into files ...")  
 if(__name__=='__main__'):
 	wave_data, fs = read_wav_data(b)  
-	wav_show(wave_data[0],fs, 'Channel_1')
-	wav_show(wave_data[1],fs, 'Channel_2')  # 如果是双声道则保留这一行，否则删掉这一行
+	wav_show(wave_data[0],fs)
+	wav_show(wave_data[1],fs)  # 如果是双声道则保留这一行，否则删掉这一行
 	time = np.arange(0, len(wave_data[0])) * (1.0/fs)
 	print("  Writing the sound data into the text files...")
 	for i in range(len(wave_data[0])):
