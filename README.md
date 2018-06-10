@@ -35,7 +35,11 @@
 2. Analysis_signal.py 
 3. Recording-3.wav 
 4. run.sh 
+
  如果你使用類linux系統，在terminal中執行run.sh即可
+ 
  如果你是windows使用者，windows7（含）以上系統可進入windows power shell, 請在windows power shell 中執行run.sh
+ 
  如果你沒有windows power shell, 請先用python 執行produce_signal.py 再執行Analysis_signal.py
+ 
  需要輸入的音檔是資料夾內的Recording-3,你也可以輸入自己的wav檔，但不建議超過30秒
