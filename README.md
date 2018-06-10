@@ -36,6 +36,12 @@
 3. Recording-3.wav 
 4. run.sh 
 
+執行前需安裝python、python套件包（pyaudio、wave、tkinter），安裝方法(windows)：
+1. 進入cmd
+2. 輸入 pip install pyaudio
+3. 輸入 pip install wave
+4. 輸入 pip install tkinter
+
  如果你使用類linux系統，在terminal中執行run.sh即可
  
  如果你是windows使用者，windows7（含）以上系統可進入windows power shell, 請在windows power shell 中執行run.sh
@@ -43,3 +49,9 @@
  如果你沒有windows power shell, 請先用python 執行produce_signal.py 再執行Analysis_signal.py
  
  需要輸入的音檔是資料夾內的Recording-3,你也可以輸入自己的wav檔，但不建議超過30秒
+ 
+ 如果你對文字介面不熟悉，請將解壓後的資料夾放在桌面，在windows power shell 中輸入
+ 
+ cd /Destop/Chaos_group3
+ 
+ 
