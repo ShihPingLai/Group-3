@@ -54,4 +54,4 @@
  
  cd /Destop/Chaos_group3
  
- 
+ ./run.sh
