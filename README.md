@@ -47,6 +47,9 @@
 
 # 使用方法
 下載Chaos_group3.zip，並解壓縮
+
+如果你的電腦無法執行tkinter，請改下載Chaos_group3_no_tk.zip
+
 壓縮檔內含:
 1. produce_signal.py 
 2. Analysis_signal.py 
